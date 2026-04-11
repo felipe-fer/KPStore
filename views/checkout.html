@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/checkout.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo-area">
+      <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo" />
+      <h1>KP Store</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cabecalho-checkout">
+      <div class="cabecalho-conteudo">
+        <span class="tag-pagina">FINALIZAÇÃO DO PEDIDO</span>
+        <h2>Checkout</h2>
+      </div>
+    </section>
+
+    <section class="area-checkout">
+      <form class="formulario-checkout" id="formulario-checkout">
+        <div class="bloco-formulario">
+          <h3>Dados do cliente</h3>
+
+          <input type="text" id="nome" placeholder="Nome completo" />
+          <input type="text" id="telefone" placeholder="Telefone" />
+          <input type="text" id="endereco" placeholder="Endereço" />
+          <input type="text" id="cidade" placeholder="Cidade" />
+        </div>
+
+        <div class="bloco-formulario">
+          <h3>Entrega</h3>
+
+          <select id="forma-entrega">
+            <option>Correios</option>
+            <option>Entrega local</option>
+            <option>Retirada</option>
+          </select>
+        </div>
+
+        <div class="bloco-formulario">
+          <h3>Pagamento</h3>
+
+          <select id="forma-pagamento">
+            <option>Pix</option>
+            <option>Cartão</option>
+            <option>Boleto</option>
+            <option>Presencial</option>
+          </select>
+        </div>
+
+        <div class="bloco-formulario">
+          <textarea id="observacoes" placeholder="Observações"></textarea>
+        </div>
+      </form>
+
+      <aside class="resumo-checkout">
+        <h3>Resumo</h3>
+
+        <div id="lista-resumo-checkout"></div>
+
+        <p>Subtotal: <span id="subtotal-checkout"></span></p>
+        <p>Total: <span id="total-checkout"></span></p>
+
+        <button form="formulario-checkout" type="submit" class="botao-confirmar">
+          Confirmar pedido
+        </button>
+
+        <a href="carrinho.html">Voltar</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 KP Store</p>
+  </footer>
+
+  <script src="../assets/js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/carrinho.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo-area">
+      <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo" />
+      <h1>KP Store</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cabecalho-carrinho">
+      <div class="cabecalho-conteudo">
+        <span class="tag-pagina">SEU PEDIDO</span>
+        <h2>Carrinho de compras</h2>
+        <p>Confira os itens selecionados antes de finalizar seu pedido.</p>
+      </div>
+    </section>
+
+    <section class="area-carrinho">
+      <div class="lista-itens-carrinho" id="lista-itens-carrinho"></div>
+
+      <aside class="resumo-carrinho">
+        <h3>Resumo do pedido</h3>
+
+        <div class="linha-resumo">
+          <span>Subtotal</span>
+          <span id="subtotal-carrinho">R$ 0,00</span>
+        </div>
+
+        <div class="linha-resumo">
+          <span>Entrega</span>
+          <span>A combinar</span>
+        </div>
+
+        <div class="linha-resumo total">
+          <span>Total</span>
+          <span id="total-carrinho">R$ 0,00</span>
+        </div>
+
+        <a href="checkout.html" class="botao-finalizar">Finalizar compra</a>
+        <a href="produtos.html" class="botao-continuar">Continuar comprando</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 KP Store - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../assets/js/carrinho.js"></script>
+</body>
+</html>

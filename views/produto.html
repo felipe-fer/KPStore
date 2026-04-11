@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/produto.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo-area">
+      <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo" />
+      <h1>KP Store</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="detalhes-produto">
+      <div class="galeria-produto">
+        <div class="imagem-principal">Imagem principal</div>
+
+        <div class="miniaturas-produto">
+          <div class="miniatura">Imagem 1</div>
+          <div class="miniatura">Imagem 2</div>
+          <div class="miniatura">Imagem 3</div>
+        </div>
+      </div>
+
+      <div class="informacoes-produto">
+        <span class="categoria-produto" id="categoria-produto"></span>
+        <h2 id="nome-produto"></h2>
+        <p class="preco-produto" id="preco-produto"></p>
+
+        <p class="descricao-produto" id="descricao-produto"></p>
+
+        <div class="grupo-opcoes">
+          <label for="tamanho">Tamanho</label>
+          <select id="tamanho" class="campo-opcao"></select>
+        </div>
+
+        <div class="grupo-opcoes">
+          <label for="cor">Cor</label>
+          <select id="cor" class="campo-opcao"></select>
+        </div>
+
+        <div class="acoes-produto">
+          <a href="#" class="botao-comprar" id="botao-adicionar">Adicionar ao carrinho</a>
+          <a href="#" class="botao-whatsapp">Falar no WhatsApp</a>
+        </div>
+
+        <div class="informacoes-extras">
+          <div class="item-extra">
+            <h3>Entrega</h3>
+            <p>Correios, entrega local ou retirada combinada.</p>
+          </div>
+
+          <div class="item-extra">
+            <h3>Pagamento</h3>
+            <p>Pix, cartão, boleto ou negociação presencial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 KP Store - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../assets/js/dados.js"></script>
+  <script src="../assets/js/produto.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --preto-principal: #0a0a0a;
+  --preto-secundario: #121212;
+  --preto-card: #1b1b1b;
+  --azul-principal: #1da1e2;
+  --azul-secundario: #1487be;
+  --branco: #ffffff;
+  --cinza-claro: #d6d6d6;
+  --cinza-texto: #bdbdbd;
+  --borda-escura: #262626;
+}
+
+body {
+  background-color: var(--preto-principal);
+  color: var(--branco);
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: var(--preto-secundario);
+  border-bottom: 2px solid var(--azul-principal);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--borda-escura);
+}
+
+.logo-area h1 {
+  font-size: 1.7rem;
+  color: var(--branco);
+  letter-spacing: 0.5px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--azul-principal);
+}
+
+.banner-principal {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+  background: linear-gradient(135deg, var(--preto-principal) 60%, var(--azul-secundario) 100%);
+}
+
+.banner-conteudo {
+  max-width: 620px;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 14px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+}
+
+.banner-conteudo h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.banner-conteudo p {
+  color: var(--cinza-claro);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.banner-acoes {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.btn-principal {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+}
+
+.btn-principal:hover {
+  background-color: var(--azul-secundario);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  border: 2px solid var(--branco);
+  color: var(--branco);
+}
+
+.btn-secundario:hover {
+  background-color: var(--branco);
+  color: var(--preto-principal);
+  transform: translateY(-2px);
+}
+
+.categorias,
+.produtos-destaque,
+.beneficios {
+  padding: 60px 8%;
+}
+
+.categorias h2,
+.produtos-destaque h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--azul-principal);
+}
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.card-categoria {
+  background-color: var(--preto-secundario);
+  border: 1px solid var(--borda-escura);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.card-categoria:hover {
+  border-color: var(--azul-principal);
+  transform: translateY(-4px);
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card-produto {
+  background-color: var(--preto-secundario);
+  border: 1px solid var(--borda-escura);
+  border-radius: 14px;
+  padding: 18px;
+  transition: 0.3s ease;
+}
+
+.card-produto:hover {
+  border-color: var(--azul-principal);
+  transform: translateY(-5px);
+}
+
+.img-produto {
+  width: 100%;
+  height: 220px;
+  background-color: var(--preto-card);
+  color: var(--cinza-texto);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.card-produto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.preco {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--azul-principal);
+  margin-bottom: 16px;
+}
+
+.card-produto button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card-produto button:hover {
+  background-color: var(--azul-secundario);
+}
+
+.botao-produto {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.botao-produto:hover {
+  background-color: var(--azul-secundario);
+}
+
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.beneficio {
+  background-color: var(--preto-secundario);
+  border-left: 4px solid var(--azul-principal);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.beneficio h3 {
+  color: var(--azul-principal);
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+}
+
+.beneficio p {
+  color: var(--cinza-texto);
+  line-height: 1.6;
+}
+
+.rodape {
+  text-align: center;
+  padding: 22px;
+  background-color: #050505;
+  color: var(--cinza-texto);
+  border-top: 1px solid #1f1f1f;
+}
+
+@media (max-width: 768px) {
+  .topo {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 6%;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .banner-principal {
+    min-height: auto;
+    padding: 50px 6%;
+  }
+
+  .banner-conteudo h2 {
+    font-size: 2.2rem;
+  }
+
+  .banner-conteudo p {
+    font-size: 1rem;
+  }
+
+  .categorias,
+  .produtos-destaque,
+  .beneficios {
+    padding: 50px 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-area h1 {
+    font-size: 1.4rem;
+  }
+
+  .banner-conteudo h2 {
+    font-size: 1.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner-acoes {
+    flex-direction: column;
+  }
+}
