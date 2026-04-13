@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backoffice | Pedidos | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/admin-pedidos.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo-area">
+      <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo" />
+      <h1>KP Store - Backoffice</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Loja</a>
+      <a href="admin-pedidos.html">Pedidos</a>
+      <a href="admin-produtos.html">Produtos</a>
+
+      <span id="admin-info"></span>
+      <button id="botao-logout" class="botao-logout">Sair</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cabecalho-admin">
+      <div class="cabecalho-conteudo">
+        <span class="tag-pagina">PAINEL ADMINISTRATIVO</span>
+        <h2>Pedidos recebidos</h2>
+        <p>Acompanhe os pedidos realizados na KP Store.</p>
+      </div>
+    </section>
+
+    <section class="area-pedidos">
+      <div id="lista-pedidos" class="lista-pedidos"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 KP Store - Backoffice</p>
+  </footer>
+
+  <script src="../assets/js/admin-pedidos.js"></script>
+</body>
+</html>

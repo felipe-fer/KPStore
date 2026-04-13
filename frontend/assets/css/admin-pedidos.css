@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --preto-principal: #0a0a0a;
+  --preto-secundario: #121212;
+  --preto-card: #1b1b1b;
+  --azul-principal: #1da1e2;
+  --azul-secundario: #1487be;
+  --branco: #ffffff;
+  --cinza-claro: #d6d6d6;
+  --cinza-texto: #bdbdbd;
+  --borda-escura: #262626;
+}
+
+body {
+  background-color: var(--preto-principal);
+  color: var(--branco);
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: var(--preto-secundario);
+  border-bottom: 2px solid var(--azul-principal);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--borda-escura);
+}
+
+.logo-area h1 {
+  font-size: 1.5rem;
+  color: var(--branco);
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: var(--azul-principal);
+}
+
+#admin-info {
+  color: var(--cinza-claro);
+  font-size: 0.9rem;
+}
+
+.botao-logout {
+  padding: 8px 14px;
+  border: 1px solid var(--branco);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--branco);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-logout:hover {
+  background-color: var(--branco);
+  color: var(--preto-principal);
+}
+
+.cabecalho-admin {
+  padding: 60px 8% 30px;
+  background: linear-gradient(135deg, var(--preto-principal) 60%, var(--azul-secundario) 100%);
+}
+
+.cabecalho-conteudo {
+  max-width: 700px;
+}
+
+.tag-pagina {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.cabecalho-conteudo h2 {
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+}
+
+.cabecalho-conteudo p {
+  color: var(--cinza-claro);
+  line-height: 1.6;
+}
+
+.area-pedidos {
+  padding: 40px 8% 60px;
+}
+
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card-pedido {
+  background-color: var(--preto-secundario);
+  border: 1px solid var(--borda-escura);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.topo-pedido {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.topo-pedido h3 {
+  color: var(--azul-principal);
+  margin-bottom: 8px;
+}
+
+.info-pedido p,
+.info-cliente p,
+.item-pedido {
+  color: var(--cinza-claro);
+  line-height: 1.6;
+}
+
+.bloco-pedido {
+  margin-top: 18px;
+}
+
+.bloco-pedido h4 {
+  color: var(--branco);
+  margin-bottom: 10px;
+}
+
+.lista-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-pedido {
+  background-color: var(--preto-card);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.status-pedido {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 8px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+}
+
+.area-status {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.campo-status {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--borda-escura);
+  background-color: var(--preto-card);
+  color: var(--branco);
+}
+
+.botao-status {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-status:hover {
+  background-color: var(--azul-secundario);
+}
+
+.rodape {
+  text-align: center;
+  padding: 22px;
+  background-color: #050505;
+  color: var(--cinza-texto);
+  border-top: 1px solid #1f1f1f;
+}
+
+.mensagem-vazia {
+  background-color: var(--preto-secundario);
+  border: 1px solid var(--borda-escura);
+  border-radius: 12px;
+  padding: 20px;
+  color: var(--cinza-claro);
+}
+
+@media (max-width: 768px) {
+  .topo {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 6%;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cabecalho-admin,
+  .area-pedidos {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .cabecalho-conteudo h2 {
+    font-size: 2rem;
+  }
+}
