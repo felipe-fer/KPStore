@@ -1,90 +1,48 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-# ===== JAVA / MAVEN =====
+# ==============================
+# JAVA / MAVEN
+# ==============================
 target/
 *.class
 *.jar
 *.war
 *.ear
 
-# ===== MAVEN WRAPPER =====
+# Maven Wrapper
 .mvn/wrapper/maven-wrapper.jar
 
-# ===== IDEs =====
+# ==============================
+# IDEs
+# ==============================
 .vscode/
 .idea/
 *.iml
 
-# ===== SISTEMA =====
+# ==============================
+# SISTEMA
+# ==============================
 .DS_Store
 Thumbs.db
 
-# ===== LOGS =====
+# ==============================
+# LOGS
+# ==============================
 *.log
 
-# ===== ENV / SEGURANÇA =====
+# ==============================
+# ENV / SEGURANÇA
+# ==============================
 .env
+*.env
+application-local.properties
+src/main/resources/application-local.properties
 
-# ===== NODE (caso use depois) =====
-node_modules/
-
-# ===== OUTROS =====
+# ==============================
+# BUILD / CACHE
+# ==============================
 out/
 build/
 
-src/main/resources/application-local.properties
-
-# Java / Maven
-target/
-*.class
-*.jar
-*.war
-*.ear
-
-# IDE
-.vscode/
-.idea/
-*.iml
-
-# Logs
-*.log
-
-# Ambiente / segredos
-.env
-src/main/resources/application-local.properties
-
-# Sistema
-.DS_Store
-Thumbs.db
+# ==============================
+# NODE (se usar futuramente)
+# ==============================
+node_modules/
