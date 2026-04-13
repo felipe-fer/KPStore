@@ -63,3 +63,28 @@ node_modules/
 # ===== OUTROS =====
 out/
 build/
+
+src/main/resources/application-local.properties
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Ambiente / segredos
+.env
+src/main/resources/application-local.properties
+
+# Sistema
+.DS_Store
+Thumbs.db
