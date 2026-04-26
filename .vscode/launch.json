@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Kpstore",
+      "request": "launch",
+      "mainClass": "com.kpstore.KpstoreApplication",
+      "projectName": "kpstore",
+      "envFile": "${workspaceFolder}/backend/kpstore/.env"
+    }
+  ]
+}

@@ -7,6 +7,10 @@ import java.util.List;
 public class PedidoResponseDTO {
 
     private String id;
+    private String clienteId;
+    private String clienteNome;
+    private String clienteEmail;
+
     private String nomeCliente;
     private String telefone;
     private String endereco;
@@ -22,11 +26,25 @@ public class PedidoResponseDTO {
     public PedidoResponseDTO() {
     }
 
-    public PedidoResponseDTO(String id, String nomeCliente, String telefone, String endereco,
-                             String cidade, String formaEntrega, String formaPagamento,
-                             String observacoes, String status, List<PedidoItemDTO> itens,
-                             BigDecimal total, LocalDateTime dataPedido) {
+    public PedidoResponseDTO(String id,
+                             String clienteId,
+                             String clienteNome,
+                             String clienteEmail,
+                             String nomeCliente,
+                             String telefone,
+                             String endereco,
+                             String cidade,
+                             String formaEntrega,
+                             String formaPagamento,
+                             String observacoes,
+                             String status,
+                             List<PedidoItemDTO> itens,
+                             BigDecimal total,
+                             LocalDateTime dataPedido) {
         this.id = id;
+        this.clienteId = clienteId;
+        this.clienteNome = clienteNome;
+        this.clienteEmail = clienteEmail;
         this.nomeCliente = nomeCliente;
         this.telefone = telefone;
         this.endereco = endereco;
@@ -42,6 +60,18 @@ public class PedidoResponseDTO {
 
     public String getId() {
         return id;
+    }
+
+    public String getClienteId() {
+        return clienteId;
+    }
+
+    public String getClienteNome() {
+        return clienteNome;
+    }
+
+    public String getClienteEmail() {
+        return clienteEmail;
     }
 
     public String getNomeCliente() {
@@ -86,5 +116,65 @@ public class PedidoResponseDTO {
 
     public LocalDateTime getDataPedido() {
         return dataPedido;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setClienteId(String clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public void setClienteNome(String clienteNome) {
+        this.clienteNome = clienteNome;
+    }
+
+    public void setClienteEmail(String clienteEmail) {
+        this.clienteEmail = clienteEmail;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setFormaEntrega(String formaEntrega) {
+        this.formaEntrega = formaEntrega;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setItens(List<PedidoItemDTO> itens) {
+        this.itens = itens;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    public void setDataPedido(LocalDateTime dataPedido) {
+        this.dataPedido = dataPedido;
     }
 }

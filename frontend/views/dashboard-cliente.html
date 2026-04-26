@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/dashboard-cliente.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo-area">
+      <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo" />
+      <h1>KP Store</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="checkout.html">Checkout</a>
+
+      <a href="cliente-login.html" id="link-area-cliente">Área do Cliente</a>
+      <a href="perfil-cliente.html" id="link-perfil-cliente" style="display: none;">Meu Perfil</a>
+      <a href="meus-pedidos.html" id="link-meus-pedidos" style="display: none;">Meus Pedidos</a>
+
+      <span id="nome-cliente-logado" style="display: none;"></span>
+      <button id="botao-logout-cliente" class="botao-logout-cliente" style="display: none;">Sair</button>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="boas-vindas">
+      <span class="tag-dashboard">ÁREA DO CLIENTE</span>
+      <h2 id="titulo-dashboard">Olá!</h2>
+      <p>Acompanhe seus pedidos, atualize seus dados e continue comprando na KP Store.</p>
+    </section>
+
+    <section class="cards-dashboard">
+      <article class="card-dashboard">
+        <h3>Total de pedidos</h3>
+        <strong id="total-pedidos">0</strong>
+      </article>
+
+      <article class="card-dashboard">
+        <h3>Último status</h3>
+        <strong id="ultimo-status">Nenhum</strong>
+      </article>
+
+      <article class="card-dashboard">
+        <h3>Cliente</h3>
+        <strong id="email-cliente-dashboard">---</strong>
+      </article>
+    </section>
+
+    <section class="acoes-dashboard">
+      <a href="meus-pedidos.html">Ver meus pedidos</a>
+      <a href="perfil-cliente.html">Editar perfil</a>
+      <a href="produtos.html">Continuar comprando</a>
+    </section>
+
+    <section class="ultimo-pedido">
+      <h3>Último pedido</h3>
+      <div id="area-ultimo-pedido" class="card-ultimo-pedido">
+        Carregando...
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/dashboard-cliente.js"></script>
+  <script src="../assets/js/cliente-menu.js"></script>
+</body>
+</html>

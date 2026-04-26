@@ -240,6 +240,27 @@ body {
   line-height: 1.6;
 }
 
+.botao-logout-cliente {
+  padding: 8px 14px;
+  border: 1px solid var(--branco);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--branco);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-logout-cliente:hover {
+  background-color: var(--branco);
+  color: var(--preto-principal);
+}
+
+#nome-cliente-logado {
+  color: var(--cinza);
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
 .rodape {
   text-align: center;
   padding: 22px;

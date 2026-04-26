@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área do Cliente | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/cliente-login.css" />
+</head>
+<body>
+  <main class="area-acesso">
+    <section class="card-acesso">
+      <div class="topo-acesso">
+
+        <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo-acesso" />
+        <h1>KP Store</h1>
+        <p>Entre ou crie sua conta</p>
+      </div>
+
+      <div class="abas-acesso">
+        <button id="aba-login" class="aba ativa" type="button">Login</button>
+        <button id="aba-cadastro" class="aba" type="button">Cadastro</button>
+      </div>
+
+      <form id="form-login" class="form-acesso">
+        <input type="email" id="login-email" placeholder="E-mail" required />
+        <input type="password" id="login-senha" placeholder="Senha" required />
+
+        <button type="submit" class="botao-acesso">Entrar</button>
+
+        <a href="index.html" class="botao-voltar-login">Voltar</a>
+      </form>
+
+      <form id="form-cadastro" class="form-acesso oculto">
+        <input type="text" id="cadastro-nome" placeholder="Nome completo" required />
+        <input type="email" id="cadastro-email" placeholder="E-mail" required />
+        <input type="password" id="cadastro-senha" placeholder="Senha" required />
+        <input type="text" id="cadastro-telefone" placeholder="Telefone" required />
+        <button type="submit" class="botao-acesso">Cadastrar</button>
+      </form>
+
+      <p id="mensagem-acesso" class="mensagem-acesso"></p>
+    </section>
+  </main>
+
+  <script src="../assets/js/cliente-login.js"></script>
+</body>
+</html>

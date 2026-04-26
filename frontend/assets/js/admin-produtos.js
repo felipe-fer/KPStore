@@ -1,6 +1,4 @@
-if (localStorage.getItem("adminLogado") !== "true") {
-  window.location.href = "admin-login.html";
-}
+redirecionarParaLoginSeSemToken();
 
 const adminInfo = document.getElementById("admin-info");
 const botaoLogout = document.getElementById("botao-logout");
@@ -12,8 +10,25 @@ const botaoCancelar = document.getElementById("botao-cancelar");
 
 adminInfo.textContent = localStorage.getItem("adminEmail") || "Admin";
 
-botaoLogout.addEventListener("click", function () {
-  localStorage.removeItem("adminLogado");
+botaoLogout.addEventListener("click", async function () {
+  const refreshToken = localStorage.getItem("adminRefreshToken");
+
+  try {
+    if (refreshToken) {
+      await fetch("http://localhost:8080/api/auth/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ refreshToken })
+      });
+    }
+  } catch (erro) {
+    console.error("Erro ao fazer logout:", erro);
+  }
+
+  localStorage.removeItem("adminToken");
+  localStorage.removeItem("adminRefreshToken");
   localStorage.removeItem("adminEmail");
   window.location.href = "admin-login.html";
 });
@@ -59,7 +74,9 @@ function resetarFormulario() {
 
 async function carregarProdutosAdmin() {
   try {
-    const resposta = await fetch("http://localhost:8080/api/produtos");
+    const resposta = await apiFetch("http://localhost:8080/api/produtos", {
+      method: "GET"
+    }, "admin");
 
     if (!resposta.ok) {
       throw new Error("Erro ao buscar produtos");
@@ -110,13 +127,10 @@ formProduto.addEventListener("submit", async function (event) {
     let resposta;
 
     if (produtoEmEdicaoId) {
-      resposta = await fetch(`http://localhost:8080/api/produtos/${produtoEmEdicaoId}`, {
+      resposta = await apiFetch(`http://localhost:8080/api/produtos/${produtoEmEdicaoId}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json"
-        },
         body: JSON.stringify(produto)
-      });
+      }, "admin");
 
       if (!resposta.ok) {
         throw new Error("Erro ao atualizar produto");
@@ -124,13 +138,10 @@ formProduto.addEventListener("submit", async function (event) {
 
       alert("Produto atualizado com sucesso!");
     } else {
-      resposta = await fetch("http://localhost:8080/api/produtos", {
+      resposta = await apiFetch("http://localhost:8080/api/produtos", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
         body: JSON.stringify(produto)
-      });
+      }, "admin");
 
       if (!resposta.ok) {
         throw new Error("Erro ao cadastrar produto");
@@ -149,7 +160,9 @@ formProduto.addEventListener("submit", async function (event) {
 
 async function editarProduto(id) {
   try {
-    const resposta = await fetch(`http://localhost:8080/api/produtos/${id}`);
+    const resposta = await apiFetch(`http://localhost:8080/api/produtos/${id}`, {
+      method: "GET"
+    }, "admin");
 
     if (!resposta.ok) {
       throw new Error("Erro ao buscar produto");
@@ -185,9 +198,9 @@ async function excluirProduto(id) {
   }
 
   try {
-    const resposta = await fetch(`http://localhost:8080/api/produtos/${id}`, {
+    const resposta = await apiFetch(`http://localhost:8080/api/produtos/${id}`, {
       method: "DELETE"
-    });
+    }, "admin");
 
     if (!resposta.ok) {
       throw new Error("Erro ao excluir produto");

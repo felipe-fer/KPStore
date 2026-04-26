@@ -13,12 +13,19 @@
       <h1>KP Store</h1>
     </div>
 
-    <nav class="menu">
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="carrinho.html">Carrinho</a>
-      <a href="checkout.html">Checkout</a>
-    </nav>
+   <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="carrinho.html">Carrinho</a>
+    <a href="checkout.html">Checkout</a>
+
+    <a href="cliente-login.html" id="link-area-cliente">Área do Cliente</a>
+    <a href="dashboard-cliente.html" id="link-dashboard-cliente" style="display: none;">Dashboard</a>
+    <a href="perfil-cliente.html" id="link-perfil-cliente" style="display: none;">Meu Perfil</a>
+    <a href="meus-pedidos.html" id="link-meus-pedidos" style="display: none;">Meus Pedidos</a>
+    <span id="nome-cliente-logado" style="display: none;"></span>
+    <button id="botao-logout-cliente" class="botao-logout-cliente" style="display: none;">Sair</button>
+  </nav>
   </header>
 
   <section class="banner-principal">
@@ -76,5 +83,6 @@
 
   <script src="../assets/js/dados.js"></script>
   <script src="../assets/js/index.js"></script>
+  <script src="../assets/js/cliente-menu.js"></script>
 </body>
 </html>

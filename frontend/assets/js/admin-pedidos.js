@@ -1,6 +1,4 @@
-if (localStorage.getItem("adminLogado") !== "true") {
-  window.location.href = "admin-login.html";
-}
+redirecionarParaLoginSeSemToken();
 
 const adminInfo = document.getElementById("admin-info");
 const botaoLogout = document.getElementById("botao-logout");
@@ -8,8 +6,25 @@ const listaPedidos = document.getElementById("lista-pedidos");
 
 adminInfo.textContent = localStorage.getItem("adminEmail") || "Admin";
 
-botaoLogout.addEventListener("click", function () {
-  localStorage.removeItem("adminLogado");
+botaoLogout.addEventListener("click", async function () {
+  const refreshToken = localStorage.getItem("adminRefreshToken");
+
+  try {
+    if (refreshToken) {
+      await fetch("http://localhost:8080/api/auth/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ refreshToken })
+      });
+    }
+  } catch (erro) {
+    console.error("Erro ao fazer logout:", erro);
+  }
+
+  localStorage.removeItem("adminToken");
+  localStorage.removeItem("adminRefreshToken");
   localStorage.removeItem("adminEmail");
   window.location.href = "admin-login.html";
 });
@@ -28,7 +43,9 @@ function formatarData(dataIso) {
 
 async function carregarPedidos() {
   try {
-    const resposta = await fetch("http://localhost:8080/api/pedidos");
+    const resposta = await apiFetch("http://localhost:8080/api/pedidos", {
+      method: "GET"
+    }, "admin");
 
     if (!resposta.ok) {
       throw new Error("Erro ao buscar pedidos");
@@ -121,16 +138,13 @@ async function atualizarStatusPedido(id) {
   const novoStatus = selectStatus.value;
 
   try {
-    const resposta = await fetch(`http://localhost:8080/api/pedidos/${id}/status`, {
+    const resposta = await apiFetch(`http://localhost:8080/api/pedidos/${id}/status`, {
       method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: JSON.stringify({ status: novoStatus })
-    });
+    }, "admin");
 
     if (!resposta.ok) {
-      throw new Error("Erro ao atualizar status do pedido");
+      throw new Error("Erro ao atualizar status");
     }
 
     alert("Status atualizado com sucesso!");

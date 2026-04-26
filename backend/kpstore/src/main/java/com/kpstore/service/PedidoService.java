@@ -5,7 +5,11 @@ import com.kpstore.dto.PedidoRequestDTO;
 import com.kpstore.dto.PedidoResponseDTO;
 import com.kpstore.model.Pedido;
 import com.kpstore.repository.PedidoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +19,8 @@ import java.util.stream.Collectors;
 @Service
 public class PedidoService {
 
+    private static final Logger logger = LoggerFactory.getLogger(PedidoService.class);
+
     private final PedidoRepository pedidoRepository;
 
     public PedidoService(PedidoRepository pedidoRepository) {
@@ -23,6 +29,11 @@ public class PedidoService {
 
     public PedidoResponseDTO criar(PedidoRequestDTO dto) {
         Pedido pedido = new Pedido();
+
+        pedido.setClienteId(dto.getClienteId());
+        pedido.setClienteNome(dto.getClienteNome());
+        pedido.setClienteEmail(dto.getClienteEmail());
+
         pedido.setNomeCliente(dto.getNomeCliente());
         pedido.setTelefone(dto.getTelefone());
         pedido.setEndereco(dto.getEndereco());
@@ -53,11 +64,24 @@ public class PedidoService {
         pedido.setTotal(total);
 
         Pedido salvo = pedidoRepository.save(pedido);
+
+        logger.info("Pedido criado com sucesso. ID: {}", salvo.getId());
+
         return converterParaResponseDTO(salvo);
     }
 
     public List<PedidoResponseDTO> listarTodos() {
+        logger.info("Listando todos os pedidos");
         return pedidoRepository.findAll()
+                .stream()
+                .map(this::converterParaResponseDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<PedidoResponseDTO> listarPedidosDoCliente(String clienteId) {
+        logger.info("Listando pedidos do cliente {}", clienteId);
+
+        return pedidoRepository.findByClienteId(clienteId)
                 .stream()
                 .map(this::converterParaResponseDTO)
                 .collect(Collectors.toList());
@@ -65,17 +89,29 @@ public class PedidoService {
 
     public PedidoResponseDTO buscarPorId(String id) {
         Pedido pedido = pedidoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Pedido não encontrado"
+                ));
+
+        logger.info("Pedido encontrado. ID: {}", id);
+
         return converterParaResponseDTO(pedido);
     }
 
     public PedidoResponseDTO atualizarStatus(String id, String status) {
         Pedido pedido = pedidoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Pedido não encontrado"
+                ));
 
         pedido.setStatus(status);
 
         Pedido atualizado = pedidoRepository.save(pedido);
+
+        logger.info("Status do pedido {} atualizado para {}", id, status);
+
         return converterParaResponseDTO(atualizado);
     }
 
@@ -93,6 +129,9 @@ public class PedidoService {
 
         return new PedidoResponseDTO(
                 pedido.getId(),
+                pedido.getClienteId(),
+                pedido.getClienteNome(),
+                pedido.getClienteEmail(),
                 pedido.getNomeCliente(),
                 pedido.getTelefone(),
                 pedido.getEndereco(),

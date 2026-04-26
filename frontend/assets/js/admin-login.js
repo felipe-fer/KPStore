@@ -22,7 +22,8 @@ formLogin.addEventListener("submit", async function (event) {
 
     const admin = await resposta.json();
 
-    localStorage.setItem("adminLogado", "true");
+    localStorage.setItem("adminToken", admin.token);
+    localStorage.setItem("adminRefreshToken", admin.refreshToken);
     localStorage.setItem("adminEmail", admin.email);
 
     window.location.href = "admin-pedidos.html";

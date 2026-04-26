@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Pedidos | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/meus-pedidos.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo-area">
+      <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo" />
+      <h1>KP Store</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="checkout.html">Checkout</a>
+
+      <a href="cliente-login.html" id="link-area-cliente">Área do Cliente</a>
+      <a href="dashboard-cliente.html" id="link-dashboard-cliente" style="display: none;">Dashboard</a>
+      <a href="perfil-cliente.html" id="link-perfil-cliente" style="display: none;">Meu Perfil</a>
+      <a href="meus-pedidos.html" id="link-meus-pedidos" style="display: none;">Meus Pedidos</a>
+      <span id="nome-cliente-logado" style="display: none;"></span>
+      <button id="botao-logout-cliente" class="botao-logout-cliente" style="display: none;">Sair</button>
+  </nav>
+  </header>
+
+  <main class="conteudo-pedidos">
+    <section class="cabecalho-pedidos">
+      <h2>Meus Pedidos</h2>
+      <p id="cliente-logado"></p>
+    </section>
+
+    <section id="lista-meus-pedidos" class="lista-meus-pedidos"></section>
+  </main>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/meus-pedidos.js"></script>
+  <script src="../assets/js/cliente-menu.js"></script>
+</body>
+</html>

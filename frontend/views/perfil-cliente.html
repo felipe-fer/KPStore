@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil | KP Store</title>
+  <link rel="stylesheet" href="../assets/css/cliente-login.css" />
+</head>
+<body>
+  <main class="area-acesso">
+    <section class="card-acesso">
+      <div class="topo-acesso">
+        <img src="../assets/imagens/logo.jpeg" alt="Logo KP Store" class="logo-acesso" />
+        <h1>Meu Perfil</h1>
+        <p id="email-cliente"></p>
+      </div>
+
+      <form id="form-perfil" class="form-acesso">
+        <input type="text" id="perfil-nome" placeholder="Nome completo" required />
+        <input type="text" id="perfil-telefone" placeholder="Telefone" required />
+
+        <button type="submit" class="botao-acesso">Salvar alterações</button>
+        <a href="index.html" class="botao-voltar-login">Voltar</a>
+      </form>
+
+      <p id="mensagem-perfil" class="mensagem-acesso"></p>
+    </section>
+  </main>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/perfil-cliente.js"></script>
+</body>
+</html>

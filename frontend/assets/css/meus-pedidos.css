@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --preto-principal: #0A0A0A;
+  --preto-secundario: #121212;
+  --azul-principal: #1DA1E2;
+  --azul-secundario: #1487BE;
+  --branco: #FFFFFF;
+  --cinza: #BDBDBD;
+  --borda: #262626;
+  --card: #1B1B1B;
+}
+
+body {
+  background-color: var(--preto-principal);
+  color: var(--branco);
+  min-height: 100vh;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: 2px solid var(--azul-principal);
+  background-color: var(--preto-secundario);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+}
+
+.menu a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: var(--azul-principal);
+}
+
+.conteudo-pedidos {
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cabecalho-pedidos {
+  margin-bottom: 24px;
+}
+
+.cabecalho-pedidos h2 {
+  margin-bottom: 8px;
+}
+
+.cabecalho-pedidos p {
+  color: var(--cinza);
+}
+
+.lista-meus-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card-meu-pedido {
+  background-color: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.card-meu-pedido h3 {
+  margin-bottom: 12px;
+}
+
+.card-meu-pedido p {
+  margin-bottom: 6px;
+}
+
+.lista-itens-pedido {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--borda);
+}
+
+.item-pedido {
+  margin-bottom: 10px;
+  color: var(--cinza);
+}
+
+.status-pedido {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  font-weight: bold;
+}
+
+.mensagem-vazia {
+  background-color: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 20px;
+  color: var(--cinza);
+}
+
+.botao-logout-cliente {
+  padding: 8px 14px;
+  border: 1px solid var(--branco);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--branco);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-logout-cliente:hover {
+  background-color: var(--branco);
+  color: var(--preto-principal);
+}
+
+#nome-cliente-logado {
+  color: var(--cinza);
+  font-size: 0.95rem;
+  font-weight: bold;
+}

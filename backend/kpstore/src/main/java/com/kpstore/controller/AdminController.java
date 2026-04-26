@@ -18,14 +18,21 @@ public class AdminController {
         this.adminService = adminService;
     }
 
+    @GetMapping("/teste")
+    public String teste() {
+        return "API admin funcionando";
+    }
+
     @PostMapping("/login")
     public AdminLoginResponseDTO login(@RequestBody AdminLoginRequestDTO dto) {
+        System.out.println("CHAMOU /api/admin/login para: " + dto.getEmail());
         return adminService.login(dto);
     }
 
     @PostMapping("/registrar")
     @ResponseStatus(HttpStatus.CREATED)
     public Admin registrar(@RequestBody AdminLoginRequestDTO dto) {
+        System.out.println("CHAMOU /api/admin/registrar para: " + dto.getEmail());
         return adminService.criarAdmin(dto);
     }
 }

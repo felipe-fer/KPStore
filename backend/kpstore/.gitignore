@@ -43,6 +43,6 @@ out/
 build/
 
 # ==============================
-# NODE (se usar futuramente)
+# NODE
 # ==============================
 node_modules/

@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --preto-principal: #0a0a0a;
+  --preto-secundario: #121212;
+  --preto-card: #1b1b1b;
+  --azul-principal: #1da1e2;
+  --azul-secundario: #1487be;
+  --branco: #ffffff;
+  --cinza-texto: #bdbdbd;
+  --borda-escura: #262626;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--preto-principal) 60%, var(--azul-secundario) 100%);
+  color: var(--branco);
+}
+
+.area-acesso {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card-acesso {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--preto-secundario);
+  border: 1px solid var(--borda-escura);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.topo-acesso {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo-acesso {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.topo-acesso h1 {
+  margin-bottom: 8px;
+}
+
+.topo-acesso p {
+  color: var(--cinza-texto);
+}
+
+.abas-acesso {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.aba {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--borda-escura);
+  background-color: var(--preto-card);
+  color: var(--branco);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.aba.ativa {
+  background-color: var(--azul-principal);
+}
+
+.form-acesso {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-acesso input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--borda-escura);
+  background-color: var(--preto-card);
+  color: var(--branco);
+  outline: none;
+}
+
+.botao-acesso {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-acesso:hover {
+  background-color: var(--azul-secundario);
+}
+
+.mensagem-acesso {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--cinza-texto);
+}
+
+.oculto {
+  display: none;
+}
+
+.botao-voltar-login {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  border: 1px solid var(--branco);
+  border-radius: 8px;
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.botao-voltar-login:hover {
+  background-color: var(--branco);
+  color: var(--preto-principal);
+}

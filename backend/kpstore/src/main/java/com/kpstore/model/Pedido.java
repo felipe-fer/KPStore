@@ -13,16 +13,23 @@ public class Pedido {
     @Id
     private String id;
 
+    private String clienteId;
+    private String clienteNome;
+    private String clienteEmail;
+
     private String nomeCliente;
     private String telefone;
     private String endereco;
     private String cidade;
+
     private String formaEntrega;
     private String formaPagamento;
     private String observacoes;
     private String status;
+
     private List<ItemPedido> itens;
     private BigDecimal total;
+
     private LocalDateTime dataPedido;
 
     public Pedido() {
@@ -32,92 +39,116 @@ public class Pedido {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getClienteId() {
+        return clienteId;
+    }
+
+    public String getClienteNome() {
+        return clienteNome;
+    }
+
+    public String getClienteEmail() {
+        return clienteEmail;
     }
 
     public String getNomeCliente() {
         return nomeCliente;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
     public String getTelefone() {
         return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
     public String getCidade() {
         return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
     }
 
     public String getFormaEntrega() {
         return formaEntrega;
     }
 
-    public void setFormaEntrega(String formaEntrega) {
-        this.formaEntrega = formaEntrega;
-    }
-
     public String getFormaPagamento() {
         return formaPagamento;
-    }
-
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
     }
 
     public String getObservacoes() {
         return observacoes;
     }
 
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
-    }
-
     public String getStatus() {
         return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public List<ItemPedido> getItens() {
         return itens;
     }
 
-    public void setItens(List<ItemPedido> itens) {
-        this.itens = itens;
-    }
-
     public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
-
     public LocalDateTime getDataPedido() {
         return dataPedido;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setClienteId(String clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public void setClienteNome(String clienteNome) {
+        this.clienteNome = clienteNome;
+    }
+
+    public void setClienteEmail(String clienteEmail) {
+        this.clienteEmail = clienteEmail;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setFormaEntrega(String formaEntrega) {
+        this.formaEntrega = formaEntrega;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
     }
 
     public void setDataPedido(LocalDateTime dataPedido) {
@@ -139,44 +170,44 @@ public class Pedido {
             return produtoId;
         }
 
-        public void setProdutoId(String produtoId) {
-            this.produtoId = produtoId;
-        }
-
         public String getNome() {
             return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
         }
 
         public BigDecimal getPreco() {
             return preco;
         }
 
-        public void setPreco(BigDecimal preco) {
-            this.preco = preco;
-        }
-
         public Integer getQuantidade() {
             return quantidade;
-        }
-
-        public void setQuantidade(Integer quantidade) {
-            this.quantidade = quantidade;
         }
 
         public String getCor() {
             return cor;
         }
 
-        public void setCor(String cor) {
-            this.cor = cor;
-        }
-
         public String getTamanho() {
             return tamanho;
+        }
+
+        public void setProdutoId(String produtoId) {
+            this.produtoId = produtoId;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public void setPreco(BigDecimal preco) {
+            this.preco = preco;
+        }
+
+        public void setQuantidade(Integer quantidade) {
+            this.quantidade = quantidade;
+        }
+
+        public void setCor(String cor) {
+            this.cor = cor;
         }
 
         public void setTamanho(String tamanho) {
